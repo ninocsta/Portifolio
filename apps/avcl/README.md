@@ -1,4 +1,4 @@
-# AVCL
+# Gestão de Escolinha Esportiva
 
 Estudo de caso de um sistema administrativo para escolinha esportiva, com foco em gestão de turmas, alunos, mensalidades, cobrança e visão financeira.
 

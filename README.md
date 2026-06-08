@@ -1,86 +1,69 @@
-# Portfolio de Aplicações Web
+# Portfolio de Engenharia de Software
 
-Repositório de apresentação com estudos de caso, screenshots e documentação de sistemas web desenvolvidos em Django, cobrindo operações administrativas, financeiro, comunicação automatizada, CRM comercial e SaaS multi-tenant.
+Coleção de estudos de caso de sistemas web desenvolvidos em Django, organizados para leitura rápida por recrutadores, líderes técnicos e gestores de produto.
 
-## Objetivo
+O objetivo deste repositório é mostrar experiência prática em construção de software de negócio: modelagem de domínio, CRUDs operacionais, dashboards, automação, autenticação, cobrança, interfaces administrativas e SaaS multi-tenant.
 
-Este portfolio organiza projetos reais como estudos de caso técnicos. O foco é facilitar a avaliação de experiência prática em produto, backend, modelagem de dados, automação operacional, dashboards e interfaces de gestão, sempre com dados fictícios e ambientes seguros para demonstração.
+## Leitura rápida
+
+Se você quiser avaliar este portfolio em poucos minutos:
+
+1. Abra os estudos de caso em [`apps/README.md`](./apps/README.md).
+2. Comece por `loja_carros`, `control` ou `avcl`, que mostram bem produto, operação e interface.
+3. Em cada app, veja primeiro o `README.md` e depois a pasta `screenshots/`.
+
+## O que este portfolio demonstra
+
+- Backend web com Django em contextos administrativos e comerciais.
+- Modelagem de dados orientada a operação real.
+- Dashboards e relatórios para leitura gerencial.
+- Automações de cobrança, comunicação e recorrência.
+- Aplicações multiusuário e, em um caso, multi-tenant por domínio.
+- Capacidade de transformar sistemas internos em material apresentável para avaliação técnica.
 
 ## Estudos de caso
 
-### AVCL
+| Estudo | Domínio | O que evidencia | Link |
+|---|---|---|---|
+| Gestão esportiva | Escolinha esportiva | alunos, turmas, mensalidades, dashboard financeiro | [`apps/avcl`](./apps/avcl) |
+| Messages | Comunicação automatizada | contatos, templates, histórico e status de mensagens | [`apps/messages`](./apps/messages) |
+| Operação industrial leve | Produção e comercial | pedidos, orçamentos, estoque e margem | [`apps/metalforte`](./apps/metalforte) |
+| Gestão comercial recorrente | Contratos e acompanhamento | contratos, pendências, registros e vídeos | [`apps/innovaled`](./apps/innovaled) |
+| Control | Gestão administrativa e financeira | clientes, contratos, invoices e infraestrutura recorrente | [`apps/control`](./apps/control) |
+| Operação comercial com mídia | Comercial e execução | contratos, parcelas, métricas e pipeline de vídeos | [`apps/Usina`](./apps/Usina) |
+| loja_carros | SaaS multi-tenant | vitrine pública, portal autenticado, billing e operação da loja | [`apps/loja_carros`](./apps/loja_carros) |
 
-Sistema administrativo para escolinha esportiva com foco em turmas, alunos, mensalidades e visão financeira.
+## Como cada caso está organizado
 
-- Documentação: [apps/avcl/README.md](./apps/avcl/README.md)
-- Screenshots: [apps/avcl/screenshots](./apps/avcl/screenshots)
+Cada pasta em `apps/<slug>/` segue o mesmo padrão:
 
-### Messages
+- `README.md`: resumo executivo do sistema.
+- `stack.md`: stack e decisões técnicas principais.
+- `features.md`: visão funcional objetiva.
+- `setup.md`: como subir o ambiente demo.
+- `screenshots/`: telas representativas para avaliação rápida.
+- `scripts/`: preparação do banco demo, servidor local e captura.
 
-Plataforma de comunicação automatizada via WhatsApp com contatos, templates e histórico de mensagens.
-
-- Documentação: [apps/messages/README.md](./apps/messages/README.md)
-- Screenshots: [apps/messages/screenshots](./apps/messages/screenshots)
-
-### Metalforte
-
-Sistema web para operação comercial e produtiva de indústria leve, cobrindo orçamentos, pedidos, estoque e margem.
-
-- Documentação: [apps/metalforte/README.md](./apps/metalforte/README.md)
-- Screenshots: [apps/metalforte/screenshots](./apps/metalforte/screenshots)
-
-### Innovaled
-
-Aplicação de gestão comercial para contratos recorrentes, pendências, vídeos instalados e acompanhamento operacional.
-
-- Documentação: [apps/innovaled/README.md](./apps/innovaled/README.md)
-- Screenshots: [apps/innovaled/screenshots](./apps/innovaled/screenshots)
-
-### Control
-
-Sistema administrativo para gestão de clientes, contratos, infraestrutura recorrente e cobrança. O recorte do portfolio cobre o lado administrativo e financeiro, sem o módulo `/salao`.
-
-- Documentação: [apps/control/README.md](./apps/control/README.md)
-- Screenshots: [apps/control/screenshots](./apps/control/screenshots)
-
-### Usina
-
-Plataforma comercial e operacional com contratos, pagamentos, métricas, mensagens e acompanhamento de vídeos pendentes.
-
-- Documentação: [apps/Usina/README.md](./apps/Usina/README.md)
-- Screenshots: [apps/Usina/screenshots](./apps/Usina/screenshots)
-
-### loja_carros
-
-SaaS multi-tenant para lojas de veículos, com vitrine pública por domínio da loja e portal autenticado para operação comercial e financeira.
-
-- Documentação: [apps/loja_carros/README.md](./apps/loja_carros/README.md)
-- Screenshots: [apps/loja_carros/screenshots](./apps/loja_carros/screenshots)
-
-## Estrutura
+## Organização do workspace
 
 ```text
 Portifolio/
 ├── README.md
-├── .gitignore
-└── apps/
-    ├── avcl/
-    ├── messages/
-    ├── metalforte/
-    ├── innovaled/
-    ├── control/
-    ├── Usina/
-    └── loja_carros/
+├── apps/
+│   ├── README.md
+│   └── <estudo-de-caso>/
+│       ├── README.md
+│       ├── stack.md
+│       ├── features.md
+│       ├── setup.md
+│       ├── screenshots/
+│       └── scripts/
+└── .gitignore
 ```
 
-## Padrão adotado
+## Critério de apresentação
 
-- Cada aplicação fica isolada em `apps/<slug>/`.
-- Cada estudo de caso tem README, stack, features, setup, screenshots e scripts de ambiente demo.
-- Bases demonstrativas usam SQLite separado do banco original de cada projeto.
-- Credenciais, segredos, webhooks e dados sensíveis não entram no repositório.
-- Screenshots são gerados sobre dados fictícios, com foco em leitura rápida por recrutadores e avaliadores técnicos.
-
-## Observação
-
-Todos os ambientes demonstrativos deste repositório usam dados fictícios e servem exclusivamente para apresentação profissional.
+- Todos os ambientes usam dados fictícios.
+- Nenhum segredo, webhook ou credencial real faz parte do repositório.
+- Os screenshots foram preparados para leitura rápida, não para documentação exaustiva.
+- O foco aqui é mostrar capacidade de entrega, clareza de produto e maturidade de implementação.

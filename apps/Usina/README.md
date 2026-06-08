@@ -1,4 +1,4 @@
-# Usina
+# Operação Comercial com Contratos e Vídeos
 
 Estudo de caso de uma operação Django para gestão de contratos, vendedores, telões, parcelas, métricas comerciais e fluxo de vídeos.
 

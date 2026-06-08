@@ -1,4 +1,4 @@
-# Innovaled
+# Gestão Comercial de Contratos Recorrentes
 
 Estudo de caso de uma plataforma Django para gestão comercial de contratos recorrentes, acompanhamento de vídeos instalados e pendências operacionais/financeiras.
 
