@@ -36,13 +36,15 @@ def main() -> None:
     perms = Permission.objects.filter(content_type__app_label="birthday_messages")
     user.user_permissions.set(perms)
 
-    profile = Profile.objects.create(
+    profile, _ = Profile.objects.update_or_create(
         user=user,
-        email="demo@portfolio.local",
-        phone="550000000001",
-        connected=True,
-        last_status="WORKING",
-        session="portfolio-demo",
+        defaults={
+            "email": "demo@portfolio.local",
+            "phone": "550000000001",
+            "connected": True,
+            "last_status": "WORKING",
+            "session": "portfolio-demo",
+        },
     )
 
     model_message = ModelMessage.objects.create(
