@@ -8,6 +8,11 @@ const __dirname = path.dirname(__filename);
 const portfolioDir = path.resolve(__dirname, "..");
 const screenshotsDir = path.join(portfolioDir, "screenshots");
 const baseURL = process.env.PORTFOLIO_BASE_URL || "http://127.0.0.1:8006";
+const dashboardMonth = (() => {
+  const date = new Date();
+  date.setMonth(date.getMonth() - 1);
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+})();
 
 async function login(page) {
   await page.goto(`${baseURL}/login/`, { waitUntil: "networkidle" });
@@ -15,6 +20,19 @@ async function login(page) {
   await page.locator('input[name="password"]').fill("Demo@123456");
   await page.getByRole("button", { name: /Entrar|Login/ }).click();
   await page.waitForURL(/\/(dashboard|contratos)/, { timeout: 10000 });
+}
+
+async function preparePage(page, { mobile = false } = {}) {
+  await page.addStyleTag({
+    content: `
+      img[alt="Logo"] { display: none !important; }
+      ${mobile ? `
+      #sidebar { display: none !important; transform: translateX(-100%) !important; }
+      #main-content, #main-content.sidebar-hidden { margin-left: 0 !important; width: 100% !important; }
+      .container.mt-4 { padding-left: 0.35rem !important; padding-right: 0.35rem !important; }
+      ` : ""}
+    `,
+  });
 }
 
 async function openDesktop() {
@@ -45,7 +63,8 @@ await mkdir(screenshotsDir, { recursive: true });
 {
   const { browser, page } = await openDesktop();
   await login(page);
-  await page.goto(`${baseURL}/dashboard/`, { waitUntil: "networkidle" });
+  await page.goto(`${baseURL}/dashboard/?data=${dashboardMonth}`, { waitUntil: "networkidle" });
+  await preparePage(page);
   await page.waitForTimeout(1200);
   await page.screenshot({ path: path.join(screenshotsDir, "01-dashboard-desktop.png"), type: "png" });
   await browser.close();
@@ -55,6 +74,7 @@ await mkdir(screenshotsDir, { recursive: true });
   const { browser, page } = await openDesktop();
   await login(page);
   await page.goto(`${baseURL}/contratos/`, { waitUntil: "networkidle" });
+  await preparePage(page);
   await page.waitForTimeout(600);
   await page.screenshot({ path: path.join(screenshotsDir, "02-contratos-desktop.png"), type: "png" });
   await browser.close();
@@ -64,6 +84,7 @@ await mkdir(screenshotsDir, { recursive: true });
   const { browser, page } = await openDesktop();
   await login(page);
   await page.goto(`${baseURL}/ver_contrato/1/`, { waitUntil: "networkidle" });
+  await preparePage(page);
   await page.waitForTimeout(600);
   await page.screenshot({ path: path.join(screenshotsDir, "03-contrato-detalhe-desktop.png"), type: "png" });
   await browser.close();
@@ -73,6 +94,7 @@ await mkdir(screenshotsDir, { recursive: true });
   const { browser, page } = await openDesktop();
   await login(page);
   await page.goto(`${baseURL}/contas-a-receber/`, { waitUntil: "networkidle" });
+  await preparePage(page);
   await page.waitForTimeout(600);
   await page.screenshot({ path: path.join(screenshotsDir, "04-contas-receber-desktop.png"), type: "png" });
   await browser.close();
@@ -82,7 +104,10 @@ await mkdir(screenshotsDir, { recursive: true });
   const { browser, page } = await openMobile();
   await login(page);
   await page.goto(`${baseURL}/videos/`, { waitUntil: "networkidle" });
+  await preparePage(page, { mobile: true });
   await page.waitForTimeout(800);
+  await page.evaluate(() => window.scrollTo({ top: 320, behavior: "instant" }));
+  await page.waitForTimeout(300);
   await page.screenshot({ path: path.join(screenshotsDir, "05-videos-mobile.png"), type: "png" });
   await browser.close();
 }
