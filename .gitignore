@@ -1,0 +1,7 @@
+node_modules/
+.playwright-browsers/
+playwright-report/
+test-results/
+apps/*/node_modules/
+apps/*/.playwright-browsers/
+apps/*/demo/*.sqlite3

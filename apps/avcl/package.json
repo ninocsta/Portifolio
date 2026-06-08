@@ -1,0 +1,11 @@
+{
+  "name": "avcl-portfolio-assets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "portfolio:screenshots": "PLAYWRIGHT_BROWSERS_PATH=.playwright-browsers node scripts/capture-screenshots.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.2"
+  }
+}
