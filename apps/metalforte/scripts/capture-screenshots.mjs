@@ -45,7 +45,7 @@ await mkdir(screenshotsDir, { recursive: true });
 {
   const { browser, page } = await desktopPage();
   await login(page);
-  await page.goto(`${baseURL}/pedidos/`, { waitUntil: "networkidle" });
+  await page.goto(`${baseURL}/pedidos/?status=Todos`, { waitUntil: "networkidle" });
   await page.screenshot({ path: path.join(screenshotsDir, "02-pedidos-desktop.png"), type: "png" });
   await browser.close();
 }
@@ -53,7 +53,7 @@ await mkdir(screenshotsDir, { recursive: true });
 {
   const { browser, page } = await desktopPage();
   await login(page);
-  await page.goto(`${baseURL}/orcamentos/`, { waitUntil: "networkidle" });
+  await page.goto(`${baseURL}/orcamentos/?status=Todos`, { waitUntil: "networkidle" });
   await page.screenshot({ path: path.join(screenshotsDir, "03-orcamentos-desktop.png"), type: "png" });
   await browser.close();
 }
@@ -70,8 +70,8 @@ await mkdir(screenshotsDir, { recursive: true });
 {
   const { browser, page } = await mobilePage();
   await login(page);
-  await page.goto(`${baseURL}/dashboard/`, { waitUntil: "networkidle" });
-  await page.waitForTimeout(1200);
+  await page.goto(`${baseURL}/estoque/`, { waitUntil: "networkidle" });
+  await page.waitForTimeout(800);
   await page.screenshot({ path: path.join(screenshotsDir, "05-dashboard-mobile.png"), type: "png" });
   await browser.close();
 }
