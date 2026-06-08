@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+APP_ROOT="${PORTFOLIO_APP_ROOT:-$(cd "$ROOT_DIR/../control" && pwd)}"
+PYTHON_BIN="$APP_ROOT/venv/bin/python"
+DB_PATH="$ROOT_DIR/apps/control/demo/portfolio.sqlite3"
+
+rm -f "$DB_PATH"
+mkdir -p "$(dirname "$DB_PATH")"
+
+export DATABASE_URL="sqlite:///$DB_PATH"
+export DEBUG="True"
+export ALLOWED_HOSTS="127.0.0.1,localhost"
+export PORTFOLIO_APP_ROOT="$APP_ROOT"
+
+cd "$APP_ROOT"
+"$PYTHON_BIN" manage.py migrate --noinput
+"$PYTHON_BIN" "$ROOT_DIR/apps/control/scripts/seed_demo.py"
+echo "Banco demo pronto em: $DB_PATH"
