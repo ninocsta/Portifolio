@@ -21,3 +21,11 @@ Arquivos auxiliares:
 - stack: [`stack.md`](./stack.md)
 - features: [`features.md`](./features.md)
 - setup: [`setup.md`](./setup.md)
+
+## Telas
+
+![Dashboard](./screenshots/01-dashboard-desktop.png)
+![Invoices](./screenshots/02-invoices-admin-desktop.png)
+![Contratos](./screenshots/03-contratos-admin-desktop.png)
+![Clientes](./screenshots/04-clientes-admin-desktop.png)
+![Mobile](./screenshots/05-dashboard-mobile.png)

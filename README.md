@@ -14,6 +14,7 @@ Se você quiser avaliar este portfolio em poucos minutos:
 
 ## O que este portfolio demonstra
 
+- Front-end Angular com TypeScript, RxJS e Reactive Forms.
 - Backend web com Django em contextos administrativos e comerciais.
 - Modelagem de dados orientada a operação real.
 - Dashboards e relatórios para leitura gerencial.
@@ -25,6 +26,7 @@ Se você quiser avaliar este portfolio em poucos minutos:
 
 | Estudo | Domínio | O que evidencia | Link |
 |---|---|---|---|
+| angular-dashboard | Front-end Angular | componentes, RxJS, HTTP, Reactive Forms | [`apps/angular-dashboard`](apps/angular-dashboard) |
 | Gestão esportiva | Escolinha esportiva | alunos, turmas, mensalidades, dashboard financeiro | [`apps/avcl`](./apps/avcl) |
 | Messages | Comunicação automatizada | contatos, templates, histórico e status de mensagens | [`apps/messages`](./apps/messages) |
 | Operação industrial leve | Produção e comercial | pedidos, orçamentos, estoque e margem | [`apps/metalforte`](./apps/metalforte) |

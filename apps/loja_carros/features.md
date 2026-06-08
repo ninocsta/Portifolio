@@ -1,9 +1,9 @@
 # Features
 
-- vitrine publica por loja com estoque filtravel
-- pagina de detalhe de veiculo com acessorios, galeria e CTA por WhatsApp
+- vitrine pública por loja com estoque filtrável
+- página de detalhe de veículo com acessórios, galeria e CTA por WhatsApp
 - portal autenticado com dashboard executivo
-- gestao de veiculos, despesas por veiculo e despesas mensais
+- gestão de veículos, despesas por veículo e despesas mensais
 - RBAC por cargo dentro do tenant
 - camada de billing SaaS com status de assinatura e pagamentos
-- base preparada para FIPE, catalogo e operacao multiusuario
+- base preparada para FIPE, catálogo e operação multiusuário

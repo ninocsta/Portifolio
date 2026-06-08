@@ -22,3 +22,11 @@ Arquivos de apoio:
 - stack: [`stack.md`](./stack.md)
 - features: [`features.md`](./features.md)
 - setup local: [`setup.md`](./setup.md)
+
+## Telas
+
+![Dashboard](./screenshots/01-dashboard-desktop.png)
+![Contratos](./screenshots/02-contratos-desktop.png)
+![Detalhe do contrato](./screenshots/03-contrato-detalhe-desktop.png)
+![Pendências de pagamento](./screenshots/04-pendencias-pagamento-desktop.png)
+![Mobile](./screenshots/05-contratos-mobile.png)

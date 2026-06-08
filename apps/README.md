@@ -6,6 +6,7 @@ Atalho para navegar pelos projetos do portfolio sem depender da estrutura de pas
 
 | Ordem | Estudo | Ponto forte |
 |---|---|---|
+| 0 | [`angular-dashboard`](./angular-dashboard/README.md) | projeto Angular com componentes, serviços, RxJS e consumo de API REST |
 | 1 | [`loja_carros`](./loja_carros/README.md) | SaaS multi-tenant com site público e portal interno |
 | 2 | [`control`](./control/README.md) | gestão administrativa, cobrança e contratos recorrentes |
 | 3 | [`avcl`](./avcl/README.md) | sistema administrativo enxuto com boa leitura funcional |

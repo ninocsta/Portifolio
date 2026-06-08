@@ -1,10 +1,10 @@
 # Setup
 
-Pre-requisitos:
+Pré-requisitos:
 
-- repositorios `Portifolio/` e `loja_carros/` como irmaos em `/home/nicolas/Documentos/github/`
+- repositórios `Portifolio/` e `loja_carros/` como irmãos em `/home/nicolas/Documentos/github/`
 - ambiente virtual do projeto em `loja_carros/venv`
-- Node.js disponivel para o Playwright
+- Node.js disponível para o Playwright
 
 Banco demo:
 
@@ -22,7 +22,7 @@ cd /home/nicolas/Documentos/github/Portifolio/apps/loja_carros
 
 URLs principais do ambiente demo:
 
-- publico: `http://demo.localtest.me:8007/estoque/`
+- público: `http://demo.localtest.me:8007/estoque/`
 - portal: `http://demo.localtest.me:8007/accounts/login/`
 
 Captura de screenshots:
@@ -34,7 +34,7 @@ npx playwright install chromium
 npm run portfolio:screenshots
 ```
 
-Saida esperada:
+Saída esperada:
 
 - banco SQLite demo em `demo/portfolio.sqlite3`
 - screenshots em `screenshots/`
